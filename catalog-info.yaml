@@ -12,7 +12,8 @@ metadata:
     argocd/app-name: dssp-targetnode-3-qa
     backstage.io/kubernetes-id: DSSP-TargetNode-3
     sonarqube.org/project-key: dssp-targetnode-3
-    prometheus.io/rule: "container_cpu_usage_seconds_total{pod=~'DSSP-TargetNode-3.*'}|pod,container_memory_usage_bytes{pod=~'DSSP-TargetNode-3.*'}|pod"
+    # prometheus.io/rule: "container_cpu_usage_seconds_total{pod=~'DSSP-TargetNode-3.*'}|pod,container_memory_usage_bytes{pod=~'DSSP-TargetNode-3.*'}|pod"
+    prometheus.io/rule: "kube_pod_container_resource_requests{pod=~'DSSP-TargetNode-3.*'}|resource,kube_pod_container_status_restarts_total{pod=~'DSSP-TargetNode-3.*'}|container"
     prometheus.io/alert: "all"
 
 spec:
